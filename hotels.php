@@ -1,6 +1,6 @@
 <?php
 
-    $hotels = [
+    $hotels_all = [
 
         [
             'name' => 'Hotel Belvedere',
@@ -40,6 +40,12 @@
 
     ];
 
+    // foreach($hotels_all as $hotel_single) {
+    //     var_dump($hotel_single);
+    //     foreach($hotel_single as $hotel) {
+    //         var_dump($hotel);
+    //     }
+    // }
 ?>
 
 
@@ -54,7 +60,13 @@
 </head>
 <body>
     <ul>
-        <li></li>
+    <?php foreach($hotels_all as $hotel_single) : ?>
+        
+        <?php foreach($hotel_single as $hotel) : ?>
+           <li><?= $hotel ?></li>
+        <?php endforeach ?>
+        
+    <?php endforeach ?>
     </ul>
 </body>
 </html>
