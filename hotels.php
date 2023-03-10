@@ -39,14 +39,8 @@
         ],
 
     ];
-
-    // foreach($hotels_all as $hotel_single) {
-    //     var_dump($hotel_single);
-    //     foreach($hotel_single as $hotel) {
-    //         var_dump($hotel);
-    //     }
-    // }
 ?>
+
 
 
 
@@ -57,16 +51,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP Hotel</title>
+
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
 </head>
 <body>
-    <ul>
-    <?php foreach($hotels_all as $hotel_single) : ?>
-        
-        <?php foreach($hotel_single as $hotel) : ?>
-           <li><?= $hotel ?></li>
+    <div class="container my-5">
+      <table class="table">
+        <?php foreach($hotels_all as $hotel_single) : ?>
+        <tbody>
+          <tr>
+            <?php foreach($hotel_single as $key => $hotel) : ?>
+            <th scope="row">
+                <?= $key ?>
+            </th>
+            <td>
+                <?= $hotel ?>
+            </td>
+            <?php endforeach ?>
+          </tr>
+        </tbody>
         <?php endforeach ?>
-        
-    <?php endforeach ?>
-    </ul>
+      </table>
+    </div> 
+   
 </body>
 </html>
+
