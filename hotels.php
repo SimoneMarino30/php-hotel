@@ -39,6 +39,8 @@
         ],
 
     ];
+
+   
 ?>
 
 
@@ -63,23 +65,25 @@
 </head>
 <body>
     <div class="container my-5">
-      <table class="table">
         <?php foreach($hotels_all as $hotel_single) : ?>
+      <table class="table table-striped table-hover table-bordered">
+        <?php foreach($hotel_single as $key => $hotel) : ?>
         <tbody>
           <tr>
-            <?php foreach($hotel_single as $key => $hotel) : ?>
             <th scope="row">
                 <?= $key ?>
             </th>
             <td>
                 <?= $hotel ?>
             </td>
-            <?php endforeach ?>
+            
           </tr>
         </tbody>
         <?php endforeach ?>
       </table>
+      <?php endforeach ?>
     </div> 
+    
    
 </body>
 </html>
